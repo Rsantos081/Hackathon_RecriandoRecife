@@ -18,6 +18,11 @@ class Chamado(db.Model):
 
     solicitante_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     responsavel_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
+    ocorrencia_id = db.Column(db.Integer, db.ForeignKey("ocorrencias.id"), nullable=True)
+    latitude = db.Column(db.Float, nullable=True)
+    longitude = db.Column(db.Float, nullable=True)
+    precisao_metros = db.Column(db.Float, nullable=True)
+    localizacao_capturada_em = db.Column(db.DateTime, nullable=True)
 
     criado_em = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     atualizado_em = db.Column(
@@ -31,6 +36,7 @@ class Chamado(db.Model):
     responsavel = db.relationship(
         "User", back_populates="chamados_responsavel", foreign_keys=[responsavel_id]
     )
+    ocorrencia = db.relationship("Ocorrencia", back_populates="chamados")
     comentarios = db.relationship(
         "Comentario", back_populates="chamado",
         cascade="all, delete-orphan", order_by="Comentario.criado_em"
@@ -44,6 +50,21 @@ class Chamado(db.Model):
             "categoria": self.categoria,
             "status": self.status,
             "prioridade": self.prioridade,
+            "ocorrencia_id": self.ocorrencia_id,
+            "localizacao": (
+                {
+                    "latitude": self.latitude,
+                    "longitude": self.longitude,
+                    "precisao_metros": self.precisao_metros,
+                    "capturada_em": (
+                        self.localizacao_capturada_em.isoformat()
+                        if self.localizacao_capturada_em
+                        else None
+                    ),
+                }
+                if self.latitude is not None and self.longitude is not None
+                else None
+            ),
             "solicitante": self.solicitante.to_dict() if self.solicitante else None,
             "responsavel": self.responsavel.to_dict() if self.responsavel else None,
             "criado_em": self.criado_em.isoformat() if self.criado_em else None,
