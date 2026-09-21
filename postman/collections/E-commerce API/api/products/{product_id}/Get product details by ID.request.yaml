@@ -1,0 +1,29 @@
+$kind: http-request
+description: ""
+url: "{{baseUrl}}/api/products/:product_id"
+method: GET
+headers:
+  Accept: "*/*"
+pathVariables:
+  - key: product_id
+    value: "2348"
+    disabled: false
+    description: Product ID to retrieve details
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Get product details by ID.resources/examples
+order: 1000

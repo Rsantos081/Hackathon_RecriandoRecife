@@ -1,0 +1,26 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/login"
+  method: POST
+  headers:
+    Content-Type: application/json
+  body:
+    type: json
+    content: |-
+      {
+        "username": "string",
+        "password": "string"
+      }
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Set-Cookie
+      value: string
+      disabled: false
+      description: ""
+      $type: string
+  body:
+    type: text
+    content: ""
+order: 1000

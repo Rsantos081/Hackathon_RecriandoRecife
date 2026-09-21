@@ -1,0 +1,10 @@
+$kind: http-request
+description: ""
+url: "{{baseUrl}}/api/cart/checkout"
+method: POST
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Checkout and clear the cart.resources/examples
+order: 1000

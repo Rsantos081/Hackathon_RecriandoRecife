@@ -1,0 +1,27 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/products/update/:product_id"
+  method: PUT
+  headers:
+    Content-Type: application/json
+  pathVariables:
+    - key: product_id
+      value: "2348"
+      disabled: false
+      description: Product ID to update
+  body:
+    type: json
+    content: |-
+      {
+        "id": 833,
+        "name": "string",
+        "price": 3052.1084346280736,
+        "description": "string"
+      }
+response:
+  statusCode: 400
+  statusText: Bad Request
+  body:
+    type: text
+    content: ""
+order: 2000

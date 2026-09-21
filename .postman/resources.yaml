@@ -1,7 +1,11 @@
-# Use this workspace to collaborate
 workspace:
   id: 077fdbb3-7d75-4308-8de9-c086005c1f14
 
 localResources:
   collections:
     - ../API_Recife.postman_collection.json
+  specs:
+    - ../postman/specs/E-commerce API/1709328020385-attachment.x-yaml
+resourceNameMappings:
+  specs:
+    - ../postman/specs/E-commerce API/1709328020385-attachment.x-yaml: E-commerce API

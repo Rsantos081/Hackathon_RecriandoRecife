@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/products/delete/:product_id"
+  method: DELETE
+  pathVariables:
+    - key: product_id
+      value: "2348"
+      disabled: false
+      description: Product ID to delete
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

@@ -1,0 +1,53 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/products"
+  method: GET
+  headers:
+    Accept: "*/*"
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: "*/*"
+  body:
+    type: text
+    content: |-
+      [
+        {
+          "id": 4805,
+          "name": "string",
+          "price": 3174.042303589003,
+          "description": "string"
+        },
+        {
+          "id": 703,
+          "name": "string",
+          "price": 8922.751363024698,
+          "description": "string"
+        }
+      ]
+    $type: |-
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            },
+            "price": {
+              "type": "number"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+order: 1000

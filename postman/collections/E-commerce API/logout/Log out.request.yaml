@@ -1,0 +1,10 @@
+$kind: http-request
+description: ""
+url: "{{baseUrl}}/logout"
+method: POST
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Log out.resources/examples
+order: 1000

@@ -1,0 +1,15 @@
+$kind: http-example
+name: Checkout successful. Cart has been cleared.
+request:
+  url: "{{baseUrl}}/api/cart/checkout"
+  method: POST
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

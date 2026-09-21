@@ -1,0 +1,27 @@
+$kind: http-request
+description: ""
+url: "{{baseUrl}}/api/cart/add/:product_id"
+method: POST
+pathVariables:
+  - key: product_id
+    value: "2348"
+    disabled: false
+    description: Product ID to add to the cart
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Add item to the cart.resources/examples
+order: 1000

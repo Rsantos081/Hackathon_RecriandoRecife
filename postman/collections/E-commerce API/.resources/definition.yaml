@@ -1,0 +1,4 @@
+$kind: collection
+description: API for an e-commerce system
+variables:
+  baseUrl: http://127.0.0.1:5000

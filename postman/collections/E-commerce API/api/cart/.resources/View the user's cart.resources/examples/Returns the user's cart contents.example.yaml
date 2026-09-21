@@ -1,0 +1,48 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/cart"
+  method: GET
+  headers:
+    Accept: "*/*"
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: "*/*"
+  body:
+    type: text
+    content: |-
+      [
+        {
+          "id": 653,
+          "user_id": 7113,
+          "product_id": 6066
+        },
+        {
+          "id": 8049,
+          "user_id": 6146,
+          "product_id": 3960
+        }
+      ]
+    $type: |-
+      {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "user_id": {
+              "type": "integer"
+            },
+            "product_id": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+order: 1000

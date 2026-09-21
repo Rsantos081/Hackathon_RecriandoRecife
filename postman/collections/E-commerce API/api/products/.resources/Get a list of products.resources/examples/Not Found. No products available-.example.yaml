@@ -1,0 +1,15 @@
+$kind: http-example
+name: Not Found. No products available.
+request:
+  url: "{{baseUrl}}/api/products"
+  method: GET
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

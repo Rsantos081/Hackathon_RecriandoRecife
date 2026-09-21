@@ -1,0 +1,27 @@
+$kind: http-request
+description: ""
+url: "{{baseUrl}}/api/cart/remove/:item_id"
+method: DELETE
+pathVariables:
+  - key: item_id
+    value: "2348"
+    disabled: false
+    description: Cart item ID to remove from the cart
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: text
+  content: ""
+settings: {}
+examples: ./.resources/Remove item from the cart.resources/examples
+order: 1000

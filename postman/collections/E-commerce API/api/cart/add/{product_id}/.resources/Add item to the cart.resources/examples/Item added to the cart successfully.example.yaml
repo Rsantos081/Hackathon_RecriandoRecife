@@ -1,0 +1,19 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/cart/add/:product_id"
+  method: POST
+  pathVariables:
+    - key: product_id
+      value: "2348"
+      disabled: false
+      description: Product ID to add to the cart
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  body:
+    type: text
+    content: ""
+order: 1000

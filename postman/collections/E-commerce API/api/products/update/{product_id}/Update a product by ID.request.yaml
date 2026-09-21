@@ -1,0 +1,53 @@
+$kind: http-request
+description: ""
+url: "{{baseUrl}}/api/products/update/:product_id"
+method: PUT
+headers:
+  Content-Type: application/json
+pathVariables:
+  - key: product_id
+    value: "2348"
+    disabled: false
+    description: Product ID to update
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+body:
+  type: json
+  content: |-
+    {
+      "id": 833,
+      "name": "string",
+      "price": 3052.1084346280736,
+      "description": "string"
+    }
+  $type: |-
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "number"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+settings: {}
+examples: ./.resources/Update a product by ID.resources/examples
+order: 1000

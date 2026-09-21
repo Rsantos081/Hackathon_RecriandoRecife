@@ -1,0 +1,20 @@
+$kind: http-example
+name: Not Found. Product not available.
+request:
+  url: "{{baseUrl}}/api/products/:product_id"
+  method: GET
+  pathVariables:
+    - key: product_id
+      value: "2348"
+      disabled: false
+      description: Product ID to retrieve details
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000

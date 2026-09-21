@@ -1,0 +1,47 @@
+$kind: http-example
+request:
+  url: "{{baseUrl}}/api/products/:product_id"
+  method: GET
+  headers:
+    Accept: "*/*"
+  pathVariables:
+    - key: product_id
+      value: "2348"
+      disabled: false
+      description: Product ID to retrieve details
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    Content-Type: "*/*"
+  body:
+    type: text
+    content: |-
+      {
+        "id": 833,
+        "name": "string",
+        "price": 3052.1084346280736,
+        "description": "string"
+      }
+    $type: |-
+      {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+order: 1000

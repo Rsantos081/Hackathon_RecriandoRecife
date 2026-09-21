@@ -1,0 +1,20 @@
+$kind: http-example
+name: Not Found. No products found for the search query.
+request:
+  url: "{{baseUrl}}/api/products/search?q=string"
+  method: GET
+  queryParams:
+    - key: q
+      value: string
+      disabled: false
+      description: Search query
+  body:
+    type: text
+    content: ""
+response:
+  statusCode: 404
+  statusText: Not Found
+  body:
+    type: text
+    content: ""
+order: 2000
